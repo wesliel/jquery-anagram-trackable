@@ -1,0 +1,15 @@
+<div id="fixture">
+
+<!-- Should trigger tracking on mouseover event action, category -->
+<div id="track-mouseover" data-trackable data-event="mouseover" data-category="category1"></div>
+
+<!-- Should trigger tracking on mouseout and click event action, category, label, and a value (numeric)-->
+<div id="track-mouseout-click" data-trackable data-event="mouseout click" data-category="category2" data-label="label1" value="4"></div>
+
+<!-- Should trigger tracking on click event action, but include nonInteraction for no-hit, and no value sent (invalid) -->
+<div id="track-click-no-hit-no-value" data-trackable data-event="click" data-category="category3" data-no-hit value="not-a-number"></div>
+
+<!-- Should trigger tracking on click event action, and include a page hit -->
+<div id="track-click-hit" data-trackable data-event="click" data-category="category4" data-hit="/my-page"></div>
+
+</div>
