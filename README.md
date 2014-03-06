@@ -1,7 +1,7 @@
 jquery-anagram-trackable
 =========================
 
-Anagram Trackable is a [jQuery](http://www.jquery.com/) plugin which enables Google Analytics custom events tracking through data attributes, and automatic error logging.
+Anagram Trackable is a [jQuery](http://www.jquery.com/) plugin which enables [Google Analytics custom events](https://developers.google.com/analytics/devguides/collection/analyticsjs/events) tracking through data attributes, and automatic error logging.
 
 To see how this tool works, please take a look at the Jasmine test suite and its fixture.
 
