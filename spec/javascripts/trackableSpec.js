@@ -38,6 +38,19 @@ describe("A document", function() {
     expect(window.ga).toHaveBeenCalledWith('send', 'event', 'category4', 'click', { page : '/my-page' });
   });
 
+  it("should track click event on a dynamically created dom element", function() {
+    var $newDiv = $('<div>').attr({
+      'data-trackable': 'true',
+      'data-event': 'click',
+      'data-category': 'category3',
+      'data-label': 'label2',
+      'value': '99'
+    });
+    $('#fixture').append($newDiv);
+    $newDiv.trigger('click');
+    expect(window.ga).toHaveBeenCalledWith('send', 'event', 'category3', 'click', 'label2');
+  });
+
   it("should track JavaScript error thrown", function() {
     // This try/catch block is to work-around native JavaScript error stopping Jasmine from continuing
     try {

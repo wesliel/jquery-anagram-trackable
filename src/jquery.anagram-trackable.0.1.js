@@ -95,6 +95,15 @@ oldErrorHandler =  window.onerror;
         $this.on($this.data('event'), _gaEventHandler);
       });
 
+      // Binding dynamically created elements (ie: AJAX) as well
+      $(document).on('DOMNodeInserted', function(event) {
+        var $element = $(event.target);
+
+        if ($element.is('[data-trackable]')) {
+          $element.on($element.data('event'), _gaEventHandler);
+        }
+      });
+
       return this;
     }
 
